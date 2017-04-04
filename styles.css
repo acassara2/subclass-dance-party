@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-color:#000000;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -21,12 +21,24 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  border:10px;
   border-radius:10px;
   position:absolute;
 }
-.blueify{
-  border:10px solid lightblue;
-  border-radius:10px;
+.blinkyDancer{
   position:absolute;
+  background-color:#f00;
+  width:80px;
+  height:80px;
+  border-radius:50%;
+
+}
+.tayne{
+  position:absolute;
+  background-image:url('tayne.gif');
+  background-repeat: no-repeat;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
 }
