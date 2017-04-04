@@ -1,17 +1,26 @@
 var makeTayne = function(top, left, timeBetweenSteps) {
   dancer.call(this, top, left, timeBetweenSteps);
   this.tayne();
+  // this.animate();
 };
 
 makeTayne.prototype = Object.create(dancer.prototype);
 makeTayne.prototype.constructor = makeTayne;
 
 makeTayne.prototype.tayne = function() {
-  // call the old version of step at the beginning of any call to this new version of step
-  // toggle() is a jQuery method to show/hide the <span> tag.
-  // See http://api.jquery.com/category/effects/ for this and
-  // other effects you can use on a jQuery-wrapped html tag.
-  console.log('hey from tayne');
-  // this.$node.addClass('tayne');
-  this.$node.prepend('<img id="tayne" src="tayne.gif" />');
+  this.$node.prepend('<img class="tayne" id="tayne" src="img/taynecopysmall.gif" />');
 };
+
+makeTayne.prototype.setPosition = function(top, left) {
+  var styleSettings = {
+    top: top,
+    left: left
+  };
+  this.$node.css(styleSettings)
+};
+
+// makeTayne.prototype.animate = function() {
+//   this.$node.animate({
+//     left: Math.random * 250;
+//   });
+// };

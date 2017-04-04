@@ -30,4 +30,10 @@ $(document).ready(function() {
     window.dancers.push(dancer.$node);
     $('body').append(dancer.$node);
   });
+
+  $('.lineUpButton').on('click', function(event) {
+    // for (var i = 0; i < window.dancers.length; i++) {
+      $('.dancer').animate({top: '300px'}, "slow");
+    // };
+  });
 });
