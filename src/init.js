@@ -1,6 +1,8 @@
 $(document).ready(function() {
   window.dancers = [];
 
+  $('audio').prop("volume", 0.3);
+
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -31,9 +33,17 @@ $(document).ready(function() {
     $('body').append(dancer.$node);
   });
 
+  // $('.lineUpButton').on('click', function(event) {
+  //     $('.dancer').animate({top: '300px'}, "slow");
+  // });
   $('.lineUpButton').on('click', function(event) {
-    // for (var i = 0; i < window.dancers.length; i++) {
-      $('.dancer').animate({top: '300px'}, "slow");
-    // };
+    var newHeight = $('body').height()/2 - 100;
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].animate({top: newHeight}, "slow");
+    }
   });
+  // $('.splitGroup').on('click', function(event) {
+  //   $('.tayne').animate({left: '300px'}, "slow");
+  //   $('.CeleryMan').animate({right: '300px'}, "slow");
+  // });
 });

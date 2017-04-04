@@ -18,9 +18,3 @@ makeTayne.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings)
 };
-
-// makeTayne.prototype.animate = function() {
-//   this.$node.animate({
-//     left: Math.random * 250;
-//   });
-// };

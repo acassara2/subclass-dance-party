@@ -8,7 +8,7 @@ makeCeleryMan.prototype = Object.create(dancer.prototype);
 makeCeleryMan.prototype.constructor = makeCeleryMan;
 
 makeCeleryMan.prototype.addCelery = function() {
-  this.$node.prepend('<img class=CeleryMan" id=CeleryMan" src="img/celeryman.gif" />');
+  this.$node.prepend('<img class=CeleryMan" id=CeleryMan" src="img/celerymanfast.gif" />');
 };
 
 makeCeleryMan.prototype.setPosition = function(top, left) {
