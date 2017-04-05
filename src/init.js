@@ -2,7 +2,6 @@ $(document).ready(function() {
   window.dancers = [];
 
   $('audio').prop("volume", 0.5);
-
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -47,7 +46,7 @@ $(document).ready(function() {
   });
 
   $('.concert').on('click', function(event) {
-    for (var i = 0; i < 50; i++) {
+    for (var i = 0; i < 75; i++) {
       var dancersArray = ['makeCeleryMan', 'makeTayne'];
       var randomPerson = Math.floor(Math.random() * dancersArray.length);
       var dancerMakerFunctionName = 'makeBlinkyDancer';

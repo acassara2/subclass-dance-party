@@ -68,10 +68,10 @@ body, a:link, a:visited, a:active{
 }
 
 .concert{
-  background-image:none;
+  background-image:url('img/hakka.jpg');
   background-color:black;
   margin: 0px;
-  background-size: contain;
+  background-size: cover;
   font-size: 18px;
 }
 /*.centered {  
