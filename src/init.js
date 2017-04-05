@@ -47,7 +47,7 @@ $(document).ready(function() {
   });
 
   $('.concert').on('click', function(event) {
-    for (var i = 0; i < 30; i++) {
+    for (var i = 0; i < 50; i++) {
       var dancersArray = ['makeCeleryMan', 'makeTayne'];
       var randomPerson = Math.floor(Math.random() * dancersArray.length);
       var dancerMakerFunctionName = 'makeBlinkyDancer';
@@ -66,15 +66,16 @@ $(document).ready(function() {
       $('body').append(dancer.$node);
     }
     $('body').addClass('concert');
+    $('audio').trigger('play');
   });
 
   $('body').on('mouseover', '.dancer', function(event){
     $('.dancer').mouseover(function() {
-        var dWidth = $(document).width() - 100, // 100 = image width
-            dHeight = $(document).height() - 100, // 100 = image height
-            nextX = Math.floor(Math.random() * dWidth),
-            nextY = Math.floor(Math.random() * dHeight);
-        $(this).animate({ left: nextX + 'px', top: nextY + 'px' });
+      var dWidth = $(document).width() - 100, // 100 = image width
+        dHeight = $(document).height() - 100, // 100 = image height
+        nextX = Math.floor(Math.random() * dWidth),
+        nextY = Math.floor(Math.random() * dHeight);
+      $(this).animate({ left: nextX + 'px', top: nextY + 'px' });
     });
   });
 
