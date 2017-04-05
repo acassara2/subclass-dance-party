@@ -9,6 +9,7 @@ makeTayne.prototype.constructor = makeTayne;
 
 makeTayne.prototype.tayne = function() {
   this.$node.prepend('<img class="tayne" id="tayne" src="img/taynecopysmall.gif" />');
+  this.$node.addClass('.tayne');
 };
 
 makeTayne.prototype.setPosition = function(top, left) {
