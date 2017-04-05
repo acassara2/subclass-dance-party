@@ -30,10 +30,15 @@ makeBlinkyDancer.prototype.setColorAndWidth = function() {
 };
 
 makeBlinkyDancer.prototype.getRandomColor = function() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++ ) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
+    // var letters = '0123456789ABCDEF';
+    // var color = '#';
+    // for (var i = 0; i < 6; i++ ) {
+    //     color += letters[Math.floor(Math.random() * 16)];
+    // }
+    // return color;
+
+    var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + 
+    (Math.floor(Math.random() * 256)) + ',' + 
+    (Math.floor(Math.random() * 256)) + ')';
+    return hue;
 }

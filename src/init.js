@@ -1,7 +1,7 @@
 $(document).ready(function() {
   window.dancers = [];
 
-  $('audio').prop("volume", 0.3);
+  $('audio').prop("volume", 0.5);
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -25,17 +25,14 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
       Math.random() * 1000
     );
     window.dancers.push(dancer.$node);
     $('body').append(dancer.$node);
   });
 
-  // $('.lineUpButton').on('click', function(event) {
-  //     $('.dancer').animate({top: '300px'}, "slow");
-  // });
   $('.lineUpButton').on('click', function(event) {
     var newHeight = $('body').height()/2 - 100;
     for (var i = 0; i < window.dancers.length; i++) {
@@ -43,27 +40,45 @@ $(document).ready(function() {
     }
   });
 
-  $('.splitGroup').on('click', function(event) {
-    var leftLine = $('body').width()/2 - 400;
-    var rightLine = $('body').width()/2 + 400;
+  $('.moveAround').on('click', function(event) {
     for (var i = 0; i < window.dancers.length; i++) {
-      if (i < window.dancers.length / 2) {
-        window.dancers[i].animate({left: leftLine}, "slow");
-      } else {
-        window.dancers[i].animate({right: rightLine}, "slow");
-      }
+      window.dancers[i].trigger('.moveItems');
     }
   });
 
-  $('.dancer').on('click', function(event){
-    console.log('hey from mouseover');
-    $('#tayne').addClass('flipped');
-  }).mouseleave(function(){
-    console.log('hey');
-    // $(this).removeClass('flipped');
+  $('.concert').on('click', function(event) {
+    for (var i = 0; i < 30; i++) {
+      var dancersArray = ['makeCeleryMan', 'makeTayne'];
+      var randomPerson = Math.floor(Math.random() * dancersArray.length);
+      var dancerMakerFunctionName = 'makeBlinkyDancer';
+
+      // get the maker function for the kind of dancer we're supposed to make
+      var dancerMakerFunction = window[dancerMakerFunctionName];
+
+      // make a dancer with a random position
+
+      var dancer = new dancerMakerFunction(
+        $("body").height() * Math.random(),
+        $("body").width() * Math.random(),
+        Math.random() * 1000
+      );
+      window.dancers.push(dancer.$node);
+      $('body').append(dancer.$node);
+    }
+    $('body').addClass('concert');
   });
 
-  $('.concert').on('click', function(event) {
+  $('body').on('mouseover', '.dancer', function(event){
+    $('.dancer').mouseover(function() {
+        var dWidth = $(document).width() - 100, // 100 = image width
+            dHeight = $(document).height() - 100, // 100 = image height
+            nextX = Math.floor(Math.random() * dWidth),
+            nextY = Math.floor(Math.random() * dHeight);
+        $(this).animate({ left: nextX + 'px', top: nextY + 'px' });
+    });
+  });
+
+  $('.tendancers').on('click', function(event) {
     for (var i = 0; i < 10; i++) {
       var dancersArray = ['makeCeleryMan', 'makeTayne'];
       var randomPerson = Math.floor(Math.random() * dancersArray.length);
